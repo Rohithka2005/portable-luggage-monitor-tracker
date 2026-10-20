@@ -2,15 +2,18 @@
 
 An IoT-based luggage monitoring prototype that combines GPS location reporting with motion-based tamper indication. The prototype uses an Arduino UNO to read a NEO-6M GPS module and MPU6050 IMU, then sends a status line over UART to an ESP32. The ESP32 connects to Wi-Fi and serves a browser dashboard showing location, status, and a map.
 
+**[▶ Watch the Project Demo](project-demo.mp4)**
+
 > **Project status:** Academic prototype. The firmware is based on the accompanying project report and should be checked against your exact wiring and library versions before use.
 
 ## Features
 
-- GPS latitude and longitude using the NEO-6M module
-- Tilt-based movement/tamper indication using MPU6050 acceleration readings
-- Arduino UNO to ESP32 serial communication
-- ESP32-hosted web page with location, status, and embedded map
-- Refreshing dashboard for local-network monitoring
+- **GPS location reporting:** Reads latitude and longitude from the NEO-6M GPS module when a valid fix is available.
+- **Motion-based tamper indication:** Uses MPU6050 acceleration readings and a simple tilt threshold to label the status as `Secured` or `Tampered`.
+- **Microcontroller communication:** Sends newline-terminated status records from the Arduino UNO to the ESP32 over UART/serial.
+- **Wi-Fi dashboard:** ESP32 hosts a browser-based dashboard on the local Wi-Fi network.
+- **Live status display:** Dashboard shows the latest parsed coordinates and motion status, with a five-second page refresh.
+- **Map view:** Embeds a map for valid GPS coordinates; displays a waiting/invalid-location message when no valid fix is available.
 
 ## Hardware
 
@@ -38,7 +41,7 @@ An IoT-based luggage monitoring prototype that combines GPS location reporting w
 4. The data is sent over serial/UART to the ESP32.
 5. The ESP32 hosts a web page that displays the latest values and an embedded map when coordinates are available.
 
-See [docs/architecture.md](docs/architecture.md) for the high-level data flow and [docs/wiring.md](docs/wiring.md) for connections transcribed from the report.
+See [docs/architecture.md](docs/architecture.md) for the system architecture diagram and [docs/wiring.md](docs/wiring.md) for connections transcribed from the report.
 
 ## Prototype demonstration
 
@@ -60,6 +63,7 @@ The video shows the assembled electronics and mobile browser interface, includin
 - `firmware/esp32/` — ESP32 dashboard firmware
 - `docs/` — architecture and wiring notes
 - `images/` — hardware and dashboard stills from the demonstration video
+- `project-demo.mp4` — project demonstration video
 - `PATENT.md` — application details from the supplied status record
 
 ## Setup
