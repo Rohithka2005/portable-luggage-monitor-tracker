@@ -42,15 +42,24 @@ See [docs/architecture.md](docs/architecture.md) for the high-level data flow an
 
 ## Prototype demonstration
 
-The project demonstration video supplied with this repository discussion shows the assembled electronics and the mobile browser interface. The visible interface includes GPS/location and status panels, along with a map area. This is presented as a demonstration of the prototype, not as a benchmark or independent validation of tracking accuracy.
+The following images are stills extracted from the actual project demonstration video.
 
-**Media note:** The demonstration video is not currently hosted in this GitHub repository. Add a shareable video link or upload approved still images to the `images/` folder to display the evidence directly on this page.
+### Assembled hardware
+
+![Portable Luggage Monitor and Tracker hardware prototype](images/prototype.jpg)
+
+### Mobile dashboard
+
+![Mobile dashboard showing location, status, and map area](images/dashboard.jpg)
+
+The video shows the assembled electronics and mobile browser interface, including GPS/location and status panels with a map area. These images document the demonstrated setup; they are not benchmarks or independent validation of tracking accuracy.
 
 ## Repository layout
 
 - `firmware/arduino-uno/` — Arduino UNO firmware
 - `firmware/esp32/` — ESP32 dashboard firmware
 - `docs/` — architecture and wiring notes
+- `images/` — hardware and dashboard stills from the demonstration video
 - `PATENT.md` — application details from the supplied status record
 
 ## Setup
